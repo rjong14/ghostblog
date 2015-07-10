@@ -1,0 +1,38 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The tag below includes the theme header - partials/header.hbs }}
+{{> header}}
+
+<main class="content" role="main">
+    <div class="inner">
+
+        {{! Everything inside the #post tags pulls data from the page }}
+        {{#post}}
+        <article class="{{post_class}}" role="article">
+            {{#if image }}
+                <div class="post-thumbnail"><img src="{{image}}" alt="{{title}}"></div>
+            {{/if}}
+            <div class="entry-box">
+                <header class="entry-header">
+                    <h1 class="entry-title">{{title}}</h1>
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    {{content}}
+                </div><!-- .entry-content -->
+                {{#if tags}}
+                    <footer class="entry-footer">
+                        <div class="post-tags">
+                            Tagged: {{tags separator=" / "}}
+                        </div>
+                    </footer><!-- .entry-footer -->
+                {{/if}}
+            </div><!-- .entry-box -->
+        </article><!-- .post -->
+        {{/post}}
+
+    </div><!-- .inner -->
+</main><!-- .content -->
+
+{{! The tag below includes the theme footer - partials/footer.hbs }}
+{{> footer}}

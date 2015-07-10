@@ -1,0 +1,78 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The tag below includes the theme header - partials/header.hbs }}
+{{> header}}
+
+<main class="content" role="main">
+    <div class="inner">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+        <article class="{{post_class}}" role="article">
+            {{#if image }}
+                <div class="post-thumbnail"><img src="{{image}}" alt="{{title}}"></div>
+            {{/if}}
+            <div class="entry-box">
+                <header class="entry-header">
+                    <h1 class="entry-title">{{title}}</h1>
+                    <div class="entry-meta">
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> by {{author}}
+                    </div>
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    {{content}}
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    {{#if tags}}
+                        <div class="post-tags">
+                            Tagged: {{tags separator=" / "}}
+                        </div>
+                    {{/if}}
+                    <div class="share-post">
+                        <span>Share this post on</span>
+                        <a class="btn-twitter" target="_blank" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">Twitter</a>
+                        <a class="btn-facebook" target="_blank" href="http://wwww.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a>
+                    </div>
+                </footer><!-- .entry-footer -->
+            </div><!-- .entry-box -->
+            {{#author}}
+            <div class="author-box">
+                <div class="author-info">
+                    {{#if image}}
+                        <div class="author-image">
+                            <a class="author-avatar" href="{{@blog.url}}/author/{{slug}}" style="background-image: url({{image}})"><span class="screen-reader-text">{{name}}'s Picture</span></a>
+                        </div>
+                    {{/if}}
+                    <div class="author-details">
+                        <h4 class="author-title">About <a href="{{url}}">{{name}}</a></h4>
+                        {{#if bio}}
+                            <p class="author-bio">{{bio}}</p>
+                        {{/if}}
+                        {{#if location}}<span class="author-location"><i class="icon-location" aria-hidden="true"></i> {{location}}</span>{{/if}}
+                       	{{#if website}}<span class="author-website"><i class="icon-link" aria-hidden="true"></i> <a href="{{website}}" target="_blank">{{website}}</a></span>{{/if}}
+                    </div>
+                </div><!-- .author-info -->
+            </div><!-- .author-box -->
+            {{/author}}
+        </article><!-- .post -->
+
+        {{! Previous/next post links }}
+        <nav class="post-nav" role="navigation">
+            {{#prev_post}}
+                <a href="{{url}}">Previous Post</a>
+            {{/prev_post}}
+            {{#next_post}}
+                <a href="{{url}}">Next Post</a>
+            {{/next_post}}
+        </nav><!-- .post-nav -->
+        {{/post}}
+
+        {{! The tag below includes the theme comments - partials/comments.hbs }}
+        {{> comments}}
+
+    </div><!-- .inner -->
+</main><!-- .content -->
+
+{{! The tag below includes the theme footer - partials/footer.hbs }}
+{{> footer}}

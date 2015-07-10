@@ -1,0 +1,22 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The tag below includes the theme header - partials/header.hbs }}
+{{> header}}
+
+{{! The main content area on the tag page }}
+<main class="content" role="main">
+    <section class="inner">
+
+        <header class="page-header">
+            <h1 class="page-title">All posts in <span class="highlight">“{{tag.name}}”</span></h1>
+        </header><!-- .page-header -->
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+
+    </section><!-- .inner -->
+</main><!-- .content -->
+
+{{! The tag below includes the theme footer - partials/footer.hbs }}
+{{> footer}}
