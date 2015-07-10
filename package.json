@@ -1,0 +1,117 @@
+{
+  "name": "ghost",
+  "version": "0.6.3",
+  "description": "Just a blogging platform.",
+  "author": {
+    "name": "Ghost Foundation"
+  },
+  "homepage": "http://ghost.org",
+  "keywords": [
+    "ghost",
+    "blog",
+    "cms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TryGhost/Ghost.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TryGhost/Ghost/issues"
+  },
+  "contributors": "https://github.com/TryGhost/Ghost/graphs/contributors",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/TryGhost/Ghost/master/LICENSE"
+    }
+  ],
+  "main": "./core/index",
+  "scripts": {
+    "start": "node index",
+    "test": "grunt validate --verbose"
+  },
+  "engines": {
+    "node": "~0.10.0 || ~0.12.0",
+    "iojs": "~1.2.0"
+  },
+  "dependencies": {
+    "bcryptjs": "2.1.0",
+    "bluebird": "2.9.25",
+    "body-parser": "1.10.0",
+    "bookshelf": "0.7.9",
+    "busboy": "0.2.9",
+    "cheerio": "0.18.0",
+    "colors": "0.6.2",
+    "compression": "1.2.2",
+    "connect-slashes": "1.3.0",
+    "cookie-session": "1.1.0",
+    "downsize": "0.0.8",
+    "express": "4.12.3",
+    "express-hbs": "0.8.4",
+    "extract-zip": "1.0.3",
+    "fs-extra": "0.13.0",
+    "glob": "4.3.2",
+    "html-to-text": "1.3.0",
+    "knex": "0.7.3",
+    "lodash": "2.4.1",
+    "moment": "2.10.2",
+    "morgan": "1.5.0",
+    "node-uuid": "1.4.2",
+    "nodemailer": "0.7.1",
+    "oauth2orize": "1.0.1",
+    "passport": "0.2.1",
+    "passport-http-bearer": "1.0.1",
+    "passport-oauth2-client-password": "0.1.2",
+    "path-match": "1.2.2",
+    "request": "2.55.0",
+    "rss": "1.1.1",
+    "semver": "4.3.3",
+    "showdown-ghost": "0.3.6",
+    "sqlite3": "3.0.6",
+    "unidecode": "0.1.3",
+    "validator": "3.39.0",
+    "xml": "1.0.0",
+    "mysql": "2.1.1",
+    "pg": "4.1.1"
+  },
+  "optionalDependencies": {
+    "mysql": "2.1.1",
+    "pg": "4.1.1"
+  },
+  "devDependencies": {
+    "bower": "~1.3.10",
+    "grunt": "~0.4.5",
+    "grunt-bg-shell": "^2.3.1",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-compress": "~0.11.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-docker": "~0.0.8",
+    "grunt-express-server": "~0.4.19",
+    "grunt-jscs": "~1.8.0",
+    "grunt-mocha-cli": "~1.13.0",
+    "grunt-mocha-istanbul": "2.4.0",
+    "grunt-shell": "~1.1.1",
+    "grunt-update-submodules": "~0.4.1",
+    "matchdep": "~0.3.0",
+    "nock": "0.52.4",
+    "require-dir": "~0.1.0",
+    "rewire": "~2.1.0",
+    "should": "~6.0.1",
+    "sinon": "~1.12.2",
+    "supertest": "~0.15.0",
+    "testem": "^0.6.23",
+    "top-gh-contribs": "^1.0.0"
+  },
+  "readme": "<a href=\"https://github.com/TryGhost/Ghost\"><img src=\"https://cloud.githubusercontent.com/assets/120485/6622822/c4c639fe-c8e7-11e4-9e64-5bec06c8b4c3.png\" alt=\"Ghost\" /></a>\n<a href=\"https://travis-ci.org/TryGhost/Ghost\"><img align=\"right\" src=\"https://travis-ci.org/TryGhost/Ghost.svg?branch=master\" alt=\"Build status\" /></a>\n\n![Ghost Screenshot](https://cloud.githubusercontent.com/assets/120485/6626466/6dae46b2-c8ff-11e4-8c7c-8dd63b215f7b.jpg)\n\n![Ghost is a simple, powerful publishing platform that allows you to share your stories with the world.](https://cloud.githubusercontent.com/assets/120485/6626501/b2bb072c-c8ff-11e4-8e1a-2e78e68fd5c3.png)\n\nThe project is maintained by a non-profit organisation called the **Ghost Foundation**, along with an amazing group of independent [contributors](https://github.com/TryGhost/Ghost/contributors). We're trying to make publishing software that changes the shape of online journalism.\n\n- [Ghost.org](https://ghost.org)\n- [Latest Release](https://ghost.org/download/)\n- [Support](http://support.ghost.org/)\n- [Theme Docs](http://themes.ghost.org)\n- [Contributing Guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md)\n- [Feature Requests](http://ideas.ghost.org/)\n- [Dev Blog](http://dev.ghost.org)\n\n\n# Quick Start Install\n\nMake sure you've installed Node.js - We recommend the latest **Node v0.10.x** release.\n\nGhost is also compatible with **Node v0.12** and **io.js v1.2**, but please note that these versions are more likely to run into installation problems. May contain nuts. Please use the [forum](https://ghost.org/forum/installation/) for help.\n\n1. Download the [latest release](https://ghost.org/download/) of Ghost\n1. Unzip in the location you want to install\n1. Fire up a terminal\n1. `npm install --production`\n1. Start Ghost!\n    - Local environment: `npm start`\n    - On a server: `npm start --production`\n1. `http://localhost:2368/ghost` :tada:\n\nMore [install docs](http://support.ghost.org/installation/) here in case you got stuck.\n\n<a name=\"getting-started\"></a>\n# Developer Install (from git)\n\nInstall Node.js. \n\n```bash\n# Node v0.10.x - full support\n# Node v0.12.x and io.js v1.2 - partial support\n#\n# Choose wisely\n```\n\nClone :ghost:\n\n```bash\ngit clone git://github.com/tryghost/ghost.git\ncd ghost\n```\n\nInstall grunt. No prizes here.\n\n```bash\nnpm install -g grunt-cli\n```\n\nInstall Ghost. If you're running locally, use [master](https://github.com/TryGhost/Ghost/tree/master). For production, use [stable](https://github.com/TryGhost/Ghost/tree/stable). :no_entry_sign::rocket::microscope:\n\n```bash\nnpm install\n```\n\nBuild the things!\n\n```bash\ngrunt init\n```\n\nMinify that shit for production?\n\n```bash\ngrunt prod\n```\n\nStart your engines.\n\n```bash\nnpm start\n\n## running production? Add --production\n```\n\nCongrats! You made it. BTW you can also just `npm install ghost` if you're into that sort of thing. NPM afficionados can also read up on using [Ghost as an NPM module](https://github.com/TryGhost/Ghost/wiki/Using-Ghost-as-an-npm-module).\n\nMore general [install docs](http://support.ghost.org/installation/) here in case you got stuck.\n\n\n# Deploying Ghost\n\nThe easiest way to deploy Ghost is on our official <strong><a href=\"https://ghost.org/pricing/\">Ghost(Pro)</a></strong> hosted platform. This service funds the Ghost Foundation, which makes actively maintaining this project possible.\n\nAlso, you get to save yourself a lot of wasted time and headaches by deploying a new instance of Ghost to a managed server with a global content delivery network in just a few clicks.\n\n[Other options](http://support.ghost.org/deploying-ghost/) are available if you prefer playing around with servers by yourself.\n\n\n# Staying Up to Date\n\nWhen a new version of Ghost comes out, you'll want to look over these [upgrade instructions](http://support.ghost.org/how-to-upgrade/) for what to do next.\n\nYou can talk to other Ghost users on [our forums](https://ghost.org/forum) or chat with Ghost developers in our [public Slack team](https://ghost.org/slack/) (it's pretty awesome). We have a public meeting every Tuesday at 5:30pm London time.\n\nNew releases are announced on the [dev blog](http://dev.ghost.org/tag/releases/). You can subscribe by email or follow [@TryGhost_Dev](https://twitter.com/tryghost_dev) on Twitter, if you prefer your updates bite-sized and facetious.\n\n:saxophone::turtle:\n\n\n# Copyright & License\n\nCopyright (c) 2013-2015 Ghost Foundation - Released under the [MIT license](LICENSE).\n",
+  "readmeFilename": "README.md",
+  "_id": "ghost@0.6.3",
+  "dist": {
+    "shasum": "069bb03e38ad4a32838c49b1ff04a2aca14ab22b"
+  },
+  "_from": "ghost@",
+  "_resolved": "https://registry.npmjs.org/ghost/-/ghost-0.6.3.tgz"
+}
